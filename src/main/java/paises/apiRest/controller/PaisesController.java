@@ -24,7 +24,7 @@ public class PaisesController {
     }
 
     @GetMapping
-    public Page<DadosListagemDoPais> listar(@PageableDefault(size = 10,sort = {"nome"}) Pageable paginacao){
+    public Page<DadosListagemDoPais> listar(@PageableDefault(size = 10,sort = {"id"}) Pageable paginacao){
         return repository.findAll(paginacao).map(DadosListagemDoPais::new);
     }
 
